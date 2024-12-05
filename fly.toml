@@ -1,13 +1,19 @@
-# fly.toml app configuration file generated for app-exemplo on 2024-12-05T11:14:46-03:00
+# fly.toml app configuration file generated for app-exemplo-cool-fog-9871 on 2024-12-05T11:53:34-03:00
 #
 # See https://fly.io/docs/reference/configuration/ for information about how to use this file.
 #
 
-app = 'app-exemplo'
+app = 'app-exemplo-cool-fog-9871'
 primary_region = 'gru'
+console_command = '/code/manage.py shell'
+
+[build]
+
+[env]
+  PORT = '8000'
 
 [http_service]
-  internal_port = 8080
+  internal_port = 8000
   force_https = true
   auto_stop_machines = 'stop'
   auto_start_machines = true
@@ -18,3 +24,7 @@ primary_region = 'gru'
   memory = '1gb'
   cpu_kind = 'shared'
   cpus = 1
+
+[[statics]]
+  guest_path = '/code/static'
+  url_prefix = '/static/'

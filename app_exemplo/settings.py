@@ -25,9 +25,11 @@ SECRET_KEY = 'django-insecure-3-f3mm@72sz#*&bo4sb0=j_vc7nych_sn0#zxic0&m**)vg($3
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
 
 
+ALLOWED_HOSTS = ['localhost', '127.0.0.1', '.fly.dev']  # <-- Updated!
+
+CSRF_TRUSTED_ORIGINS = ['https://*.fly.dev']  # <-- Updated!
 # Application definition
 
 INSTALLED_APPS = [
@@ -142,3 +144,11 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 LOGIN_URL = 'login'  # Página para onde usuários não logados serão redirecionados
 LOGIN_REDIRECT_URL = 'produto_list'  # Página após login bem-sucedido
 LOGOUT_REDIRECT_URL = 'login'  # Página após logout
+
+import os
+STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
+
+# (Opcional) Diretórios adicionais onde o Django procurará por arquivos estáticos
+STATICFILES_DIRS = [
+    os.path.join(BASE_DIR, 'static'),
+]
