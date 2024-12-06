@@ -19,6 +19,8 @@ ENV PYTHONUNBUFFERED=1
 
 RUN python manage.py migrate
 RUN python manage.py collectstatic --noinput
+RUN python manage.py runscript populate_produto -v3
+
 
 # Executar o servidor com Gunicorn
 CMD ["gunicorn", "--bind", "0.0.0.0:8000", "app_exemplo.wsgi"]
