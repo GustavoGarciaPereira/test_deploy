@@ -27,9 +27,7 @@ DEBUG = True
 
 
 
-ALLOWED_HOSTS = ['localhost', '127.0.0.1', '.fly.dev']  # <-- Updated!
-
-CSRF_TRUSTED_ORIGINS = ['https://*.fly.dev']  # <-- Updated!
+ALLOWED_HOSTS = ['your-app-name.onrender.com', 'localhost']
 # Application definition
 
 INSTALLED_APPS = [
