@@ -17,5 +17,8 @@ RUN pip install --no-cache-dir -r requirements.txt
 # Configurar variáveis de ambiente
 ENV PYTHONUNBUFFERED=1
 
+RUN python manage.py migrate
+RUN python manage.py collectstatic --noinput
+
 # Executar o servidor com Gunicorn
 CMD ["gunicorn", "--bind", "0.0.0.0:8000", "app_exemplo.wsgi"]
