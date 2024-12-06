@@ -27,7 +27,7 @@ DEBUG = True
 
 
 
-ALLOWED_HOSTS = ['your-app-name.onrender.com', 'localhost']
+ALLOWED_HOSTS = ['.onrender.com', 'localhost']
 # Application definition
 
 INSTALLED_APPS = [
